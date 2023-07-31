@@ -1,23 +1,21 @@
-import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./components/pages/Home";
 import { About } from "./components/pages/About";
+import { NavListItem, NavListLink, NavMenu } from "./components/NavMenu/NavMenu";
 
 function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
+        <NavMenu>
+            <NavListItem>
+              <NavListLink to="/">Home</NavListLink>
+            </NavListItem>
+            <NavListItem>
+              <NavListLink to="/about">About</NavListLink>
+            </NavListItem>
+        </NavMenu>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
