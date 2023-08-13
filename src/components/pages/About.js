@@ -1,15 +1,10 @@
-import styled from "styled-components";
-import { Page } from "./styles";
-
-const AboutTitle = styled.h1`
-    margin: 0;
-    font-size: 2rem;
-`;
+import { Header } from "../Header/Header";
+import { SectionContent } from "./styles";
 
 export const About = () => {
-    return (
-        <Page>
-            <AboutTitle>About</AboutTitle>
-        </Page>
-    )
+  return (
+    <SectionContent id="about">
+      <Header title="About" />
+    </SectionContent>
+  );
 };
