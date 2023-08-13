@@ -1,48 +1,55 @@
 import styled from "styled-components";
-import { Page } from "./styles";
-import Headshot from "../../images/Headshot.jpg";
-
-const MainBanner = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-`;
+import { desktop, tablet } from "../../constants/breakpoints";
+import { CORAL_PINK } from "../../constants/colors";
+import { SectionContent } from "./styles";
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: inherit;
   justify-content: center;
-  padding: 0 10rem;
+  text-align: center;
+  height: 100%;
 `;
 
 const NameText = styled.h1`
-  font-size: 10.5rem;
+  font-size: 5.5rem;
+  color: ${CORAL_PINK};
   margin: 0;
+
+  ${tablet} {
+    font-size: 7.5rem;
+  }
+
+  ${desktop} {
+    font-size: 10.5rem;
+  }
 `;
 
 const SubtitleText = styled.h2`
-  font-size: 4rem;
+  display: inline-block;
+  font-size: 1.5rem;
   margin: 0;
-`;
 
-const PhotoContainer = styled.div`
-  display: flex;
-  height: 58.75rem;
+  ${tablet} {
+    font-size: 2rem;
+  }
+
+  ${desktop} {
+    font-size: 2.75rem;
+  }
+}
 `;
 
 export const Home = () => {
   return (
-    <Page>
-      <MainBanner>
+      <SectionContent id="home">
         <TextContainer>
           <NameText>Kayti Jackson</NameText>
-          <SubtitleText>Front-end Developer</SubtitleText>
+          <SubtitleText>
+            Software Engineer | Web Developer | Checkbox Maker
+          </SubtitleText>
         </TextContainer>
-        <PhotoContainer>
-          <img src={Headshot} />
-        </PhotoContainer>
-      </MainBanner>
-    </Page>
+      </SectionContent>
   );
 };

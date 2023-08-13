@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
+import Logo from "../../images/Logo.svg";
 import styled from "styled-components";
+import { CORAL_PINK } from "../../constants/colors";
 
 const Nav = styled.nav`
-  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: row;
   position: fixed;
   width: 100%;
+  margin: 0 4rem;
+  top: 0;
 `;
 
 const NavList = styled.ul`
@@ -31,13 +36,22 @@ export const NavListLink = styled(Link)`
   padding: 0 4rem;
 
   &:hover {
-    background-color: #dadada;
+    background-color: ${CORAL_PINK};
   }
+`;
+
+const NavLogo = styled(Link)`
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
 `;
 
 export const NavMenu = ({ children }) => {
   return (
     <Nav>
+      <NavLogo to="#home">
+        <img src={Logo} alt="Kayti Jackson logo" />
+      </NavLogo>
       <NavList>{children}</NavList>
     </Nav>
   );
